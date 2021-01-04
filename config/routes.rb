@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "sessions#home"
+
   resources :cues
   resources :puppies
   resources :users
