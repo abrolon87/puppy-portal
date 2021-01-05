@@ -1,3 +1,17 @@
 <h1>Users form</h1>
 
-<p>This is where a user will create an account and get redirected to their personal page if sign up is successful</p>
+<h1>Sign Up</h1>
+
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit "Submit", :class => 'btn btn-success btn-sm' %>
+<% end %>
