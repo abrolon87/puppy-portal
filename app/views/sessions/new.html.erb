@@ -1,0 +1,21 @@
+<h1>User Login</h1> 
+<p>This is where a user will log in and be redirected to their personal page</p>
+
+
+<div>
+<% if flash[:message] %>
+ <%= flash[:message] %>
+<% end %>
+</div>
+
+<%= form_for :user do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  
+  <%= f.submit "Login" , :class => 'btn btn-success btn-sm' %>
+  
+<% end %>
