@@ -1,0 +1,31 @@
+
+
+<h1>Add a Puppy</h1>
+
+<% if @puppy.errors.any? %>
+  <ul>
+    <% @puppy.errors.full_messages.each do |message| %>
+     
+      <li><%= message %></li>
+    <%end%>
+</ul>
+<% end %>
+
+<%= form_for @puppy do |f| %>
+  
+  <%= f.hidden_field :user_id, value: @puppy.user_id %> 
+
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label "Birthday" %><br>
+  <%= f.datetime_field :age %><br>
+  <%= f.label :breed %><br>
+  <%= f.text_field :breed %><br>
+  <%= f.label :location %><br>
+  <%= f.text_field :location %><br>
+  <%= f.label :bio %><br>
+  <%= f.text_field :bio %><br>
+
+  <%= f.submit "Add Puppy", :class => 'btn btn-success btn-sm' %>
+ 
+ <% end %>
