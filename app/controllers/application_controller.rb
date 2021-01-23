@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user 
   helper_method :logged_in?
   helper_method :find_user
+  helper_method :find_puppy
   
   def current_user
     @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
@@ -18,5 +19,9 @@ class ApplicationController < ActionController::Base
   
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def find_puppy 
+    @puppy = Puppy.find(params[:id])
   end
 end
