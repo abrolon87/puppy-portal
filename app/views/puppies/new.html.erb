@@ -13,8 +13,7 @@
 
 <%= form_for @puppy do |f| %>
   
-  <%= f.hidden_field :user_id, value: @puppy.user_id %> 
-
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
   
