@@ -1,7 +1,8 @@
 class PuppiesController < ApplicationController
 
   def index 
-    @puppies = current_user.puppies.all
+    @puppies = Puppy.all
+    #@puppies = current_user.puppies.all
   end 
 
   def new 
@@ -10,7 +11,6 @@ class PuppiesController < ApplicationController
   end
 
   def create 
-    binding.pry
     @puppy = current_user.puppies.create(puppy_params)
     if @puppy.save 
       redirect_to puppy_path(@puppy)
