@@ -1,0 +1,5 @@
+<h1>Puppy Portal Puppies!</h1><br />
+
+<% @puppies.each do |puppy| %>
+<ul>  <%= link_to puppy.name, puppy_path(puppy)  %> </ul>
+ <% end %>
