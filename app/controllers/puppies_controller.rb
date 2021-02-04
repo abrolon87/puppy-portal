@@ -15,12 +15,22 @@ class PuppiesController < ApplicationController
     if @puppy.save 
       redirect_to puppy_path(@puppy)
     else  
-      binding.pry 
+      render :new
     end
   end
 
   def show 
     find_puppy
+  end
+
+  def edit 
+    find_puppy
+  end
+
+  def update 
+    find_puppy
+    @puppy.update(puppy_params)
+    redirect_to puppy_path(@puppy)
   end
 
   private 
