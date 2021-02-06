@@ -1,3 +1,10 @@
 <h1><%= @puppy.name %>'s Page</h1>
 
+  <p>I'm a <%= @puppy.breed %> </p><br>
+  
+  <p>I live in <%= @puppy.location %> </p><br>
+  
+  <p><%= @puppy.bio %></p><br>
+  
+
 <p><%= link_to "Edit Details", edit_puppy_path(@puppy) %></p>
